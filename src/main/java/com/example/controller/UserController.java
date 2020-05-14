@@ -146,7 +146,7 @@ public class UserController extends BaseController {
     @GetMapping("/user/collection")
     public Result collection() {
         IPage page = postService.page(getPage(), new QueryWrapper<Post>()
-                .inSql("id", "SELECT post_id FROM user_collection where user_id = " + getProfileId())
+                .inSql("id", "SELECT post_id FROM m_user_collection where user_id = " + getProfileId())
         );
         return Result.success(page);
     }

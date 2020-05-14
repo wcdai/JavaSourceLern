@@ -18,8 +18,12 @@
     <div class="fly-panel fly-panel-user" pad20>
       <div class="layui-tab layui-tab-brief" lay-filter="user">
         <ul class="layui-tab-title" id="LAY_mine">
-          <li data-type="mine-jie" lay-id="index" class="layui-this">我发的帖（<span>89</span>）</li>
-          <li data-type="collection" data-url="/collection/find/" lay-id="collection">我收藏的帖（<span>16</span>）</li>
+          <script id="publicid" type="text/html">
+          <li data-type="mine-jie" lay-id="index" class="layui-this">我发的帖（<span>{{d.total}}</span>）</li>
+          </script>
+          <script id="collectionid" type="text/html">
+          <li data-type="collection" data-url="/collection/find/" lay-id="collection">我收藏的帖（<span>{{d.total}}</span>）</li>
+          </script>
         </ul>
         <div class="layui-tab-content" style="padding: 20px 0;">
           <div class="layui-tab-item layui-show">
@@ -75,7 +79,10 @@
                   $("#fabu .layui-flow-more").before(html);
               });
             });
-
+            var tpl = $("#publicid").html();
+            laytpl(tpl).render(res.data, function (html) {
+              $("#publicid").before(html);
+            });
             next(lis.join(''), page < res.data.pages);
           });
         }
@@ -95,12 +102,37 @@
                 $("#collection .layui-flow-more").before(html);
               });
             });
+            var tpl = $("#collectionid").html();
+            laytpl(tpl).render(res.data, function (html) {
+              $("#collectionid").before(html);
+            });
 
             next(lis.join(''), page < res.data.pages);
           });
         }
       });
+
+      /*flow.load({
+        elem: '#LAY_mine'
+        ,isAuto: false
+        ,done: function(page, next){
+          var lis = [];
+
+
+            $.get('/user/collection?pn='+page, function(res){
+              var tpl = $("#collectionid").html();
+              laytpl(tpl).render(res.data, function (html) {
+                // $("#LAY_mine .layui-flow-more").before(html);
+              });
+              next(lis.join(''), page < res.data.pages);
+            });
+
+        }
+      });*/
+
     });
+
+
 
   </script>
 </@layout>

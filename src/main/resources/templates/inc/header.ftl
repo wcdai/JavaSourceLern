@@ -7,9 +7,9 @@
             <li class="layui-nav-item layui-this">
                 <a href="/"><i class="iconfont icon-jiaoliu"></i>主页</a>
             </li>
-            <li class="layui-nav-item">
+            <#--<li class="layui-nav-item">
                 <a target="_blank" href="https://mp.weixin.qq.com/s/lR5LC5GnD2Gs59ecV5R0XA"><i class=""></i>最新企业面试题</a>
-            </li>
+            </li>-->
         </ul>
 
         <ul class="layui-nav fly-nav-user">
