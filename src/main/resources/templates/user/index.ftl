@@ -79,10 +79,6 @@
                   $("#fabu .layui-flow-more").before(html);
               });
             });
-            var tpl = $("#publicid").html();
-            laytpl(tpl).render(res.data, function (html) {
-              $("#publicid").before(html);
-            });
             next(lis.join(''), page < res.data.pages);
           });
         }
@@ -102,33 +98,42 @@
                 $("#collection .layui-flow-more").before(html);
               });
             });
-            var tpl = $("#collectionid").html();
-            laytpl(tpl).render(res.data, function (html) {
-              $("#collectionid").before(html);
-            });
+
 
             next(lis.join(''), page < res.data.pages);
           });
         }
       });
 
-      /*flow.load({
-        elem: '#LAY_mine'
+      flow.load({
+        elem: '#collection'
         ,isAuto: false
         ,done: function(page, next){
           var lis = [];
 
-
-            $.get('/user/collection?pn='+page, function(res){
-              var tpl = $("#collectionid").html();
-              laytpl(tpl).render(res.data, function (html) {
-                // $("#LAY_mine .layui-flow-more").before(html);
-              });
-              next(lis.join(''), page < res.data.pages);
+          $.get('/user/collection?pn='+page, function(res){
+            var tpl = $("#collectionid").html();
+            laytpl(tpl).render(res.data, function (html) {
+              $("#collectionid").before(html);
             });
-
+          });
         }
-      });*/
+      });
+
+      flow.load({
+        elem: '#fabu' //指定列表容器
+        ,isAuto: false
+        ,done: function(page, next){
+          var lis = [];
+
+          $.get('/user/public?pn='+page, function(res){
+            var tpl = $("#publicid").html();
+            laytpl(tpl).render(res.data, function (html) {
+              $("#publicid").before(html);
+            });
+          });
+        }
+      });
 
     });
 

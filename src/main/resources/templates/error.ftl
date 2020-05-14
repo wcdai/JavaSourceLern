@@ -13,9 +13,9 @@
 
 <div class="fly-header layui-bg-black">
   <div class="layui-container">
-    <a class="fly-logo" href="/">
+    <#--<a class="fly-logo" href="/">
       <img src="https://www.markerhub.com/dist/images/logo/markerhub-logo.png" alt="MarkerHub" style="height: 41px;">
-    </a>
+    </a>-->
     <ul class="layui-nav fly-nav layui-hide-xs">
       <li class="layui-nav-item layui-this">
         <a href="/"><i class="iconfont icon-jiaoliu"></i>主页</a>

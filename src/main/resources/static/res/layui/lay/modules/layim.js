@@ -207,7 +207,7 @@
         l.first = !0;
         var u = C = t.open({
             type: 1,
-            area: "40%",
+            area: "5%",
             skin: "layui-box layui-layim-chat",
             id: "layui-layim-chat",
             title: "&#8203;",

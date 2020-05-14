@@ -1,10 +1,10 @@
 <div class="fly-header layui-bg-black">
     <div class="layui-container">
-        <a class="fly-logo" href="/">
-            <img src="https://www.markerhub.com/dist/images/logo/markerhub-logo.png" alt="MarkerHub" style="height: 41px;">
+        <a class="fly-logo" href="https://github.com/wcdai">
+            <img src="https://avatars3.githubusercontent.com/u/34773264" alt="GitHub" style="height: 41px;width: auto">
         </a>
-        <ul class="layui-nav fly-nav layui-hide-xs">
-            <li class="layui-nav-item layui-this">
+        <ul class="layui-nav fly-nav  layui-hide-xs" style="margin-left:4%">
+            <li class="layui-nav-item  layui-this">
                 <a href="/"><i class="iconfont icon-jiaoliu"></i>主页</a>
             </li>
             <#--<li class="layui-nav-item">
